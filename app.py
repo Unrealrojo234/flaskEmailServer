@@ -108,6 +108,10 @@ def health_check():
         "api_configured": bool(resend.api_key)
     })
 
+@app.route("/")
+def root():
+    return "<h1>Email Server 2.0</h1>"
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     debug = os.getenv("FLASK_DEBUG", "False").lower() == "true"
